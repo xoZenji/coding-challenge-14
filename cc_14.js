@@ -21,6 +21,12 @@ function createSupportTicket(customerName, issueDescription, priorityLevel) {
     resolveButton.textContent = 'Resolve';
     resolveButton.setAttribute('class', 'resolve-button');
 
+// Task 4: Support Ticket Resolution with Event Bubbling
+    resolveButton.addEventListener('click', function(event) {
+        ticketContainer.removeChild(ticket); // removing ticket fron container
+        event.stopPropagation();
+    }); // Added event listener to the resolve button.
+
     ticket.appendChild(nameHeading);
     ticket.appendChild(issueDesc);
     ticket.appendChild(priorityLvl);
@@ -29,6 +35,10 @@ function createSupportTicket(customerName, issueDescription, priorityLevel) {
     // Appends the ticket to the ticketContainer.
     const ticketContainer = document.getElementById('ticketContainer');
     ticketContainer.appendChild(ticket);
+// Task 4 cont.
+    ticketContainer.addEventListener('click', function() {
+        console.log('A ticket had been clicked.');
+    }); // Added event listener to the ticket container.
 }
 
 // Created the support tickets.:
