@@ -27,10 +27,26 @@ function createSupportTicket(customerName, issueDescription, priorityLevel) {
     ticket.appendChild(resolveButton);
 
     // Appends the ticket to the ticketContainer.
-    document.getElementById('ticketContainer')
+    const ticketContainer = document.getElementById('ticketContainer');
     ticketContainer.appendChild(ticket);
 }
 
 // Created the support tickets.:
 createSupportTicket('Tom Kirkman', 'Unable to login to the system.', 'High');
 createSupportTicket('Aaron Shore', 'Payment not processed.', 'Extreme');
+
+// Task 3: Highlighting High Priority Tickets
+function highlightHighPriorityTickets() {
+    const highPriorityTickets = document.querySelectorAll('.high');
+    const hpTicketArray = Array.from(highPriorityTickets);
+    
+    hpTicketArray.forEach(ticket => {
+        ticket.style.backgroundColor = 'teal';
+        ticket.style.border = '4px solid black';
+        ticket.style.display = 'inline-block';
+        ticket.style.padding = '5px';
+        ticket.style.margin = '5px';
+    });
+};
+
+highlightHighPriorityTickets();
