@@ -57,6 +57,6 @@ function highlightHighPriorityTickets() {
         ticket.style.padding = '5px';
         ticket.style.margin = '5px';
     });
-};
+}; // Created a function to highlight high priority tickets.
 
 highlightHighPriorityTickets();
